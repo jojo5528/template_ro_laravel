@@ -1,0 +1,19 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Prompt:300,400&display=swap&subset=thai');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Quill
+@import '~quill/dist/quill.snow.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.core.css';
+
+// Animate
+@import 'animate';
+
+// Theme
+@import 'theme';
