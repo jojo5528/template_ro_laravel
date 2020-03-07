@@ -9,6 +9,7 @@ Vue.use(Vue2Editor);
 Vue.use(vueSmoothScroll);
 
 Vue.component('status_server', require('./components/Status_Server.vue').default);
+Vue.component('news_filter', require('./components/News_Filter.vue').default);
 
 const app = new Vue({
     el: '#app',

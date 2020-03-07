@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Char;
 use App\Site;
+use App\News;
 
 class RouteController extends Controller
 {
@@ -23,6 +24,19 @@ class RouteController extends Controller
         $count['online'] = $online*$fake_online;
         $count['account'] = $account*$fake_account;
 
-        return view('home', compact('count'));
+        //news
+        $news = News::orderby('id', 'desc')->take(6)->get();
+
+        return view('home', compact('count', 'news'));
+    }
+
+    public function news_all()
+    {
+        return view('news_all');
+    }
+
+    public function news_show(News $news)
+    {
+        return view('news_show', compact('news'));
     }
 }

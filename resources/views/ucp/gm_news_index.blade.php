@@ -17,7 +17,7 @@
             <div class="card shadow">
                 <div class="card-header text-center">
                     <h1>Manage - News</h1>
-                    <p class="text-danger">*แนะนำรูปประจำข่าวสาร ขนาด w-500*h-500 pixels</p>
+                    <p class="text-danger">*แนะนำรูปประจำข่าวสาร ขนาด w-600*h-400 pixels</p>
                 </div>
                 <div class="card-body text-center">
                     <div class="row">

@@ -7,31 +7,8 @@
 </div>
 
 <div class="container bg-white py-3 mt-3 rounded shadow-lg px-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 text-center">
-            <h1 class="text-center">
-                <i class="fas fa-rss-square fa-2x text-warning"></i>
-                NEWS UPDATE
-            </h1>
-        </div>
-        <div class="col-md-6 text-center text-md-right">
-            <a href="{{route('home')}}" class="btn btn-lg btn-warning px-5 rounded-pill py-3 shadow">
-                <i class="fas fa-comment-dots fa-flip-horizontal fa-2x text-white"></i> ALL
-            </a>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        @for($i=0;$i<6;$i++)
-            <div class="col-md-4 my-1">
-                <div class="card">
-                    <div class="card-header">test</div>
-                    <div class="card-body">asdasd</div>
-                    <div class="card-footer">asdsad</div>
-                </div>
-            </div>
-        @endfor
-    </div>
+
+    @include('area.news')
     <hr class="border-dark">
 
     <h1 class="text-center"><i class="fas fa-question-circle fa-2x text-primary"></i> SUPPORT MENU</h1>

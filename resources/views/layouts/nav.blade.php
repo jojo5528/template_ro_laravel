@@ -58,7 +58,7 @@
                                 <hr class="dropdown-divider">
                                 <a class="dropdown-item text-info" href="{{route('manage.guide')}}"><i class="fas fa-question-circle"></i> GUIDE</a>
                                 <a class="dropdown-item" href="{{route('manage.dashboard')}}"><i class="fas fa-tachometer-alt"></i> DASHBOARD</a>
-                                <a class="dropdown-item" href="{{route('home')}}"><i class="fas fa-edit"></i> NEWS ARTICLES</a>
+                                <a class="dropdown-item" href="{{route('manage.news.index')}}"><i class="fas fa-edit"></i> NEWS ARTICLES</a>
                                 <a class="dropdown-item" href="{{route('home')}}"><i class="fas fa-edit"></i> PAGE ARTICLES</a>
                                 <a class="dropdown-item" href="{{route('manage.site.index')}}"><i class="fas fa-wrench"></i> SITE CONFIG</a>
                                 <a class="dropdown-item" href="{{route('manage.site.index')}}"><i class="fas fa-wrench"></i> WOE SETTING</a>
