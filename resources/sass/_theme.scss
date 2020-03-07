@@ -279,3 +279,17 @@ hr{
         }
     }
 }
+
+.card{
+    a{
+        overflow: hidden;
+        .newslogo{
+            transform: none;
+            transition: all 0.25s ease;
+            &:hover{
+                transform: scale(2) rotate(20deg);
+                filter: contrast(120%);
+            }
+        }
+    }
+}

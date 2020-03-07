@@ -12155,3 +12155,18 @@ hr {
   }
 }
 
+.card a {
+  overflow: hidden;
+}
+
+.card a .newslogo {
+  transform: none;
+  transition: all 0.25s ease;
+}
+
+.card a .newslogo:hover {
+  transform: scale(2) rotate(20deg);
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+}
+
