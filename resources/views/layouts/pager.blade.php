@@ -12,14 +12,14 @@
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css" rel="stylesheet">
     <link href="{{asset('css/animate.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
 
     <!-- JS -->
-    <script src="{{ asset('js/particles.min.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{asset('js/particles.min.js')}}"></script>
+    <script src="{{asset('js/app.js')}}" defer></script>
 </head>
 <body>
     <div id="app">

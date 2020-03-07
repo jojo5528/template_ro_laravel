@@ -95,9 +95,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">BirthDate</label>
+                            <label class="col-md-4 col-form-label text-md-right">BirthDate (ปี ค.ศ.)</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control @error('birthdate') is-invalid @enderror" name="birthdate" value="{{old('birthdate')}}" required autofocus placeholder="yyyy-mm-dd">
+                                <input type="text" class="form-control @error('birthdate') is-invalid @enderror" name="birthdate" value="{{old('birthdate')}}" required autofocus placeholder="yyyy-mm-dd | ex:1997-12-07">
                                 @error('birthdate')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{$message}}</strong>

@@ -34,73 +34,12 @@
                         </div>
                     @enderror
 
-                    <form method="POST" action="{{route('manage.news.store')}}" autocomplete="off">
-                        @csrf
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">TYPE</label>
-                            <div class="col-md-6">
-                                <select class="custom-select custom-select-lg mb-3" name="type">
-                                    <option value="1" selected>NEWS</option>
-                                    <option value="2">EVENT</option>
-                                    <option value="3">PROMOTION</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">LINK_URL <small class="text-danger">ถ้าไม่ต้องการโยงลิงก์ภายนอก ให้เว้นว่างไว้</small></label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control @error('link_url') is-invalid @enderror" name="link_url" value="{{old('link_url')}}" placeholder="LINK_URL">
-                                @error('link_url')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">IMAGE_URL <small class="text-danger">ฝากไฟล์จากเว็บอื่นแล้วนำ URL รูปมาใส่</small></label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control @error('image_url') is-invalid @enderror" name="image_url" value="{{old('image_url')}}" required placeholder="IMAGE_URL">
-                                @error('image_url')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">TITLE</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{old('title')}}" required placeholder="TITLE">
-                                @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">DESC</label>
-                            <div class="col-md-6">
-                                <textarea name="desc" rows="3" class="form-control @error('desc') is-invalid @enderror" placeholder="DESC">{{old('desc')}}</textarea>
-                                @error('desc')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0 align-items-center">
-                            <div class="col">
-                                <button type="submit" class="btn btn-outline-success btn-lg"><i class="fas fa-paper-plane"></i> CREATE</button>
-                            </div>
-                        </div>
-                    </form>
+                    <news_editor
+                        :csrf="{{json_encode(csrf_token())}}"
+                        :url_action="{{json_encode(route('manage.news.store'))}}"
+                        :data="null"
+                        :old_input="{{json_encode(Session::getOldInput())}}"
+                    ></news_editor>
 
                 </div>
             </div>

@@ -108,7 +108,6 @@ export default {
                 obj.total = data.total;
                 obj.from = data.from;
                 obj.to = data.to;
-                console.log(data.data);
             });
         },
     },

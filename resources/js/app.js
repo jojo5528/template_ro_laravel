@@ -1,15 +1,18 @@
 require('./bootstrap');
+
+require('trumbowyg/dist/trumbowyg');
+
 window.Vue = require('vue');
 window.Swal = require('sweetalert2');
-window.Quill = require('quill');
 import vueSmoothScroll from 'vue2-smooth-scroll';
-import Vue2Editor from 'vue2-editor';
 
-Vue.use(Vue2Editor);
 Vue.use(vueSmoothScroll);
 
 Vue.component('status_server', require('./components/Status_Server.vue').default);
 Vue.component('news_filter', require('./components/News_Filter.vue').default);
+Vue.component('news_editor', require('./components/News_Editor.vue').default);
+
+$.trumbowyg.svgPath = window.location.origin+'/css/icons.svg';
 
 const app = new Vue({
     el: '#app',

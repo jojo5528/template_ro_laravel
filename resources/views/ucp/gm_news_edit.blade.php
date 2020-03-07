@@ -30,90 +30,26 @@
                     </div>
                     <hr>
 
-                    @error('error')
+                    @if($errors->any())
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <b>ERROR!</b> {{$message}}
+                            <b>ERROR!</b>
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                    @enderror
+                    @endif
 
-                    <form method="POST" action="{{route('manage.news.update', $news->id)}}" autocomplete="off">
-                        @csrf
-                        @method('PUT')
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">TYPE</label>
-                            <div class="col-md-6">
-                                <select class="custom-select custom-select-lg mb-3" name="type">
-                                    <option value="1" @if($news->type==1) selected @endif>NEWS</option>
-                                    <option value="2" @if($news->type==2) selected @endif>EVENT</option>
-                                    <option value="3" @if($news->type==3) selected @endif>PROMOTION</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">ID</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" value="{{$news->id}}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">LINK_URL <small class="text-danger">ถ้าไม่ต้องการโยงลิงก์ภายนอก ให้เว้นว่างไว้</small></label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control @error('link_url') is-invalid @enderror" name="link_url" value="{{$news->link_url}}" placeholder="LINK_URL">
-                                @error('link_url')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">IMAGE_URL <small class="text-danger">ฝากไฟล์จากเว็บอื่นแล้วนำ URL รูปมาใส่</small></label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control @error('image_url') is-invalid @enderror" name="image_url" value="{{$news->image_url}}" required placeholder="IMAGE_URL">
-                                @error('image_url')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">TITLE</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{$news->title}}" required placeholder="TITLE">
-                                @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">DESC</label>
-                            <div class="col-md-6">
-                                <textarea name="desc" rows="3" class="form-control @error('desc') is-invalid @enderror" placeholder="DESC">{{$news->desc}}</textarea>
-                                @error('desc')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{$message}}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0 align-items-center">
-                            <div class="col">
-                                <button type="submit" class="btn btn-outline-success btn-lg"><i class="fas fa-paper-plane"></i> CHANGE</button>
-                            </div>
-                        </div>
-                    </form>
+                    <news_editor
+                        :csrf="{{json_encode(csrf_token())}}"
+                        :url_action="{{json_encode(route('manage.news.update', $news->id))}}"
+                        :data="{{$news}}"
+                        :old_input="null"
+                    ></news_editor>
 
                 </div>
             </div>
