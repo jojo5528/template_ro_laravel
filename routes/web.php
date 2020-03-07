@@ -33,4 +33,6 @@ Route::prefix('manage')->middleware('gm')->name('manage.')->group(function (){
     Route::post('news/truncate', 'NewsController@truncate')->name('news.truncate');
     Route::resource('site', 'SiteController');
     Route::post('site/truncate', 'SiteController@truncate')->name('site.truncate');
+    Route::resource('woe', 'WOEController');
+    Route::post('woe/truncate', 'WOEController@truncate')->name('woe.truncate');
 });

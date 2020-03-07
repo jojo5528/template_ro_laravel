@@ -25,7 +25,7 @@
                             </h2>
                             <h2>
                                 All News:
-                                <small class="text-muted"></small>
+                                <small class="text-muted">{{$count['news']}}</small>
                             </h2>
                             <a href="{{route('manage.guide')}}" class="btn btn-lg btn-block btn-info rounded-pill py-3"><i class="fas fa-question-circle fa-2x"></i> GUIDE</a>
                         </div>
@@ -41,7 +41,7 @@
                             <a href="{{route('manage.site.index')}}" class="btn btn-lg btn-block btn-warning rounded-pill py-3">
                                 <i class="fas fa-wrench fa-2x"></i> SITE CONFIG
                             </a>
-                            <a href="{{route('manage.site.index')}}" class="btn btn-lg btn-block btn-warning rounded-pill py-3">
+                            <a href="{{route('manage.woe.index')}}" class="btn btn-lg btn-block btn-warning rounded-pill py-3">
                                 <i class="fas fa-wrench fa-2x"></i> WOE SETTING
                             </a>
                         </div>

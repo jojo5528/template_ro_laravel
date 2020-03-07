@@ -1,94 +1,59 @@
 <?php
 
-use Illuminate\Database\Seeder;
-use App\Site;
-use App\News;
-use App\Page;
+namespace App\Http\Controllers;
+
 use App\WOE_Data;
-use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
-class DatabaseSeeder extends Seeder
+class WOEController extends Controller
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
+    public function index()
     {
-        //site default
-        $data = [
-            [
-                'name'=>'seo_desc',
-                'desc' => 'คำอธิบายเวลาค้นหา SEO',
-                'value' => 'Devkurov freelance webdeveloper - บริการรับทำเว็บไซต์เกมออนไลน์และออกแบบต่างๆ',
-            ],
-            [
-                'name' => 'seo_keywords',
-                'desc' => 'คำค้นหา keyword SEO',
-                'value' => 'ทำเว็บเกมส์,ฟรีแลนซ์,รับทำเว็บ,ทำเว็บRO,ทำเว็บ RO,ทำเว็บ ragnarok,ออกแบบเว็บไซต์',
-            ],
-            [
-                'name' => 'footer_desc',
-                'desc' => 'คำอธิบายเว็บไซต์ ข้อความใน FOOTER ด้านล่าง',
-                'value' => 'Server Ragnarok Online by TRO.',
-            ],
-            [
-                'name' => 'fake_account',
-                'desc' => 'หลอกจำนวน Account ID',
-                'value' => 3,
-            ],
-            [
-                'name' => 'fake_online',
-                'desc' => 'หลอกจำนวน Online Player',
-                'value' => 3,
-            ],
-        ];
-        Site::insert($data);
+        $woe = WOE_Data::orderby('castle_id','asc')->paginate(20);
+        return view('ucp.gm_woe_index', compact('woe'));
+    }
 
-        //news default
-        $images = [
-            'https://www.gamemonday.com/wp-content/uploads/2019/07/Ragnarok-Revo-Classic.jpg',
-            'https://place-hold.it/900x471/?bold=true',
-            'https://img.online-station.net/_content/2019/0724/140450/gallery/Size_900_900_471.jpg',
-        ];
-        $link_url = [null , 'https://devkurov.in.th'];
-        $data = [];
-        for($i=0;$i<30;$i++){
-            $data[$i] = [
-                'type' => rand(1,3),
-                'image_url' => $images[rand(0,2)],
-                'link_url' => $link_url[rand(0,1)],
-                'title' => Str::random(rand(4,12)),
-                'desc' => Str::random(rand(32,256)),
-            ];
+    public function create()
+    {
+        return view('ucp.gm_woe_create');
+    }
+
+    public function edit(WOE_Data $woe)
+    {
+        return view('ucp.gm_woe_edit', compact('woe'));
+    }
+
+    public function show(WOE_Data $woe)
+    {
+        return view('ucp.gm_woe_view', compact('woe'));
+    }
+
+    public function store(Request $request)
+    {
+        //
+    }
+
+    public function update(Request $request, WOE_Data $woe)
+    {
+        //
+    }
+
+    public function destroy(WOE_Data $woe)
+    {
+        $result = $woe->delete();
+
+        if(!$result){
+            return response(['message'=>'error']);
         }
-        News::insert($data);
+        return response(['message'=>'success']);
+    }
 
-        //page default
-        $data = [
-            [
-                'name'=> 'download',
-                'html' => 'แก้ไขได้ในเมนู GM > PAGE ARTICLE',
-            ],
-            [
-                'name'=> 'information',
-                'html' => 'แก้ไขได้ในเมนู GM > PAGE ARTICLE',
-            ],
-            [
-                'name'=> 'donate',
-                'html' => 'แก้ไขได้ในเมนู GM > PAGE ARTICLE',
-            ],
-            [
-                'name'=> 'vote',
-                'html' => 'แก้ไขได้ในเมนู GM > PAGE ARTICLE',
-            ],
-            [
-                'name'=> 'share',
-                'html' => 'แก้ไขได้ในเมนู GM > PAGE ARTICLE',
-            ],
-        ];
-        Page::insert($data);
+    public function truncate()
+    {
+        $result = WOE_Data::truncate();
+        if(!$result){
+            return response(['message'=>'error']);
+        }
 
         //WOE Castle Default
         $data = [
@@ -276,6 +241,9 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Gloria 5',
             ],
         ];
+
         WOE_Data::insert($data);
+
+        return response(['message'=>'success']);
     }
 }

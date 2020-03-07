@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\News;
 
 class UCPController extends Controller
 {
@@ -34,6 +35,7 @@ class UCPController extends Controller
     public function gm_index()
     {
         $count['user'] = User::count();
+        $count['news'] = News::count();
         return view('ucp.gm_dashboard', compact('count'));
     }
 }
