@@ -61,6 +61,8 @@ class DatabaseSeeder extends Seeder
                 'link_url' => $link_url[rand(0,1)],
                 'title' => Str::random(rand(4,12)),
                 'desc' => Str::random(rand(32,256)),
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
         }
         News::insert($data);
@@ -70,22 +72,32 @@ class DatabaseSeeder extends Seeder
             [
                 'name'=> 'download',
                 'html' => 'แก้ไขได้ในเมนู GM > PAGE ARTICLE',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
                 'name'=> 'information',
                 'html' => 'แก้ไขได้ในเมนู GM > PAGE ARTICLE',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
                 'name'=> 'donate',
                 'html' => 'แก้ไขได้ในเมนู GM > PAGE ARTICLE',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
                 'name'=> 'vote',
                 'html' => 'แก้ไขได้ในเมนู GM > PAGE ARTICLE',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
                 'name'=> 'share',
                 'html' => 'แก้ไขได้ในเมนู GM > PAGE ARTICLE',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ],
         ];
         Page::insert($data);

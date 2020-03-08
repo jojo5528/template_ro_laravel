@@ -15,21 +15,21 @@
     <hr>
     <div class="row justify-content-center menu_support">
         <div class="col-md-4 my-1">
-            <a class="btn btn-lg btn-block rounded-pill text-left">
+            <a href="{{route('register')}}" class="btn btn-lg btn-block rounded-pill text-left">
                 <span class="fa-stack fa-2x text-center">
                     <i class="fa-stack-2x fas fa-circle"></i>
                     <i class="fa-stack fas fa-pencil-alt text-white"></i>
                 </span>
                 REGISTER
             </a>
-            <a class="btn btn-lg btn-block rounded-pill text-left">
+            <a href="{{route('page','vote')}}" class="btn btn-lg btn-block rounded-pill text-left">
                 <span class="fa-stack fa-2x text-center">
                     <i class="fa-stack-2x fas fa-circle"></i>
                     <i class="fa-stack fas fa-hand-holding-heart text-white"></i>
                 </span>
                 VOTE SERVER
             </a>
-            <a class="btn btn-lg btn-block rounded-pill text-left">
+            <a href="{{route('page','donate')}}" class="btn btn-lg btn-block rounded-pill text-left">
                 <span class="fa-stack fa-2x text-center">
                     <i class="fa-stack-2x fas fa-circle"></i>
                     <i class="fa-stack fas fa-hand-holding-usd text-white"></i>
@@ -38,21 +38,21 @@
             </a>
         </div>
         <div class="col-md-4 offset-md-4 my-1">
-            <a class="btn btn-lg btn-block rounded-pill text-right">
+            <a href="{{route('page','information')}}" class="btn btn-lg btn-block rounded-pill text-right">
                 SERVER INFO
                 <span class="fa-stack fa-2x text-center">
                     <i class="fa-stack-2x fas fa-circle"></i>
                     <i class="fa-stack fas fa-info text-white"></i>
                 </span>
             </a>
-            <a class="btn btn-lg btn-block rounded-pill text-right">
+            <a href="{{route('page','share')}}" class="btn btn-lg btn-block rounded-pill text-right">
                 SHARE EVENT
                 <span class="fa-stack fa-2x text-center">
                     <i class="fa-stack-2x fas fa-circle"></i>
                     <i class="fa-stack fas fa-gift text-white"></i>
                 </span>
             </a>
-            <a class="btn btn-lg btn-block rounded-pill text-right">
+            <a href="{{env('APP_FB_GROUP_URL', '#!')}}" target="_blank" class="btn btn-lg btn-block rounded-pill text-right">
                 FB GROUP
                 <span class="fa-stack fa-2x text-center">
                     <i class="fa-stack-2x fas fa-circle"></i>

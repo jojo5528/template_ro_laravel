@@ -14,22 +14,22 @@
                         Download <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#!">Mini Client</a>
-                        <a class="dropdown-item" href="#!">Full Client</a>
+                        <a class="dropdown-item" href="{{route('page','download')}}">Mini Client</a>
+                        <a class="dropdown-item" href="{{route('page','download')}}">Full Client</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="#!" class="nav-link">Information</a></li>
+                <li class="nav-item"><a href="{{route('page','information')}}" class="nav-link">Information</a></li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Donate <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#!">Truemoney</a>
-                        <a class="dropdown-item" href="#!">Truewallet</a>
+                        <a class="dropdown-item" href="{{route('page','donate')}}">Truemoney</a>
+                        <a class="dropdown-item" href="{{route('page','donate')}}">Truewallet</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="{{env('APP_VOTE_URL', '#!')}}" target="_blank" class="nav-link">Vote</a></li>
+                <li class="nav-item"><a href="{{route('page','vote')}}" class="nav-link">Vote</a></li>
             </ul>
 
             <!-- Right -->
@@ -59,7 +59,7 @@
                                 <a class="dropdown-item text-info" href="{{route('manage.guide')}}"><i class="fas fa-question-circle"></i> GUIDE</a>
                                 <a class="dropdown-item" href="{{route('manage.dashboard')}}"><i class="fas fa-tachometer-alt"></i> DASHBOARD</a>
                                 <a class="dropdown-item" href="{{route('manage.news.index')}}"><i class="fas fa-edit"></i> NEWS ARTICLES</a>
-                                <a class="dropdown-item" href="{{route('home')}}"><i class="fas fa-edit"></i> PAGE ARTICLES</a>
+                                <a class="dropdown-item" href="{{route('manage.page.index')}}"><i class="fas fa-edit"></i> PAGE ARTICLES</a>
                                 <a class="dropdown-item" href="{{route('manage.site.index')}}"><i class="fas fa-wrench"></i> SITE CONFIG</a>
                                 <a class="dropdown-item" href="{{route('manage.woe.index')}}"><i class="fas fa-wrench"></i> WOE SETTING</a>
                             @endif

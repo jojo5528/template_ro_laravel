@@ -12,6 +12,7 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 //page
 Route::get('/', 'RouteController@index')->name('home');
 Route::redirect('/home', '/');
+Route::get('/{page}', 'RouteController@page_view')->name('page');
 Route::prefix('news')->name('news.')->group(function (){
     Route::get('/', 'RouteController@news_all')->name('all');
     Route::get('/{news}', 'RouteController@news_show')->name('show');
@@ -33,6 +34,8 @@ Route::prefix('manage')->middleware('gm')->name('manage.')->group(function (){
     Route::post('news/truncate', 'NewsController@truncate')->name('news.truncate');
     Route::resource('site', 'SiteController');
     Route::post('site/truncate', 'SiteController@truncate')->name('site.truncate');
+    Route::resource('page', 'PageController');
+    Route::post('page/truncate', 'PageController@truncate')->name('page.truncate');
     Route::resource('woe', 'WOEController');
     Route::post('woe/truncate', 'WOEController@truncate')->name('woe.truncate');
 });

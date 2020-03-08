@@ -35,7 +35,7 @@
                             <a href="{{route('manage.news.index')}}" class="btn btn-lg btn-block btn-warning rounded-pill py-3">
                                 <i class="fas fa-edit fa-2x"></i> NEWS ARTICLE
                             </a>
-                            <a href="{{route('user.changepassword')}}" class="btn btn-lg btn-block btn-warning rounded-pill py-3">
+                            <a href="{{route('manage.page.index')}}" class="btn btn-lg btn-block btn-warning rounded-pill py-3">
                                 <i class="fas fa-edit fa-2x"></i> PAGES ARTICLE
                             </a>
                             <a href="{{route('manage.site.index')}}" class="btn btn-lg btn-block btn-warning rounded-pill py-3">

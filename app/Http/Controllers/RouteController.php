@@ -7,6 +7,7 @@ use App\User;
 use App\Char;
 use App\Site;
 use App\News;
+use App\Page;
 
 class RouteController extends Controller
 {
@@ -38,5 +39,10 @@ class RouteController extends Controller
     public function news_show(News $news)
     {
         return view('news_show', compact('news'));
+    }
+
+    public function page_view($page){
+        $data = Page::where('name', $page)->orderby('id', 'desc')->first();
+        return view('pages')->with('page', $data);
     }
 }

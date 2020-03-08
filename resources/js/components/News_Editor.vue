@@ -44,7 +44,9 @@
         <hr>
 
         <h3>DESC HTML EDITOR</h3>
-        <textarea id="editor" name="desc">{{desc}}</textarea>
+        <div class="text-left">
+            <textarea id="editor" name="desc"></textarea>
+        </div>
 
         <div class="form-group row mb-0 align-items-center">
             <div class="col">

@@ -29,15 +29,6 @@
                     </div>
                     <hr>
 
-                    @error('success')
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <b>SUCCESS!</b> {{$message}}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @enderror
-
                     @if($news->image_url)
                         <div class="d-block text-center"><img class="img-thumbnail" src="{{$news->image_url}}" alt="NEWS-{{$news->id}}"></div>
                         <hr>
