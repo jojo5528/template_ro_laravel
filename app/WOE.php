@@ -18,11 +18,11 @@ class WOE extends Model
 
     public function Guild()
     {
-        return $this->hasOne('App\Guild', 'guild_id');
+        return $this->hasOne('App\Guild', 'guild_id', 'guild_id');
     }
 
     public function Castle()
     {
-        return $this->hasOne('App\WOE_Data', 'castle_id');
+        return $this->hasOne('App\WOE_Data', 'castle_id', 'castle_id');
     }
 }

@@ -17,6 +17,7 @@ Route::prefix('news')->name('news.')->group(function (){
     Route::get('/', 'RouteController@news_all')->name('all');
     Route::get('/{news}', 'RouteController@news_show')->name('show');
 });
+Route::get('/guild/{guild}/emblem', 'EmblemController@get_emblem')->name('guild.emblem');
 
 //ucp
 Route::prefix('ucp')->middleware('auth')->group(function (){

@@ -99,9 +99,34 @@
     <h1 class="text-center"><i class="fas fa-flag fa-2x text-danger"></i> WOE REPORT</h1>
     <hr>
     <div class="row justify-content-center text-center box-warreport p-5">
-        <div class="col-md-3">a</div>
-        <div class="col-md-6">a</div>
-        <div class="col-md-3">a</div>
+        <div class="col">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-bordered">
+                    <thead class="bg-danger text-white">
+                        <tr>
+                            <th>EMBLEM</th>
+                            <th>CASTLE</th>
+                            <th>GUILD</th>
+                            <th>MASTER</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($woe as $row)
+                            <tr>
+                                <td><img src="{{$row['guild_emblem']}}" alt="{{$row['guild_name']}}" width="24" height="24"></td>
+                                <td>{{$row['castle_name']}}</td>
+                                <td>{{$row['guild_name']}}</td>
+                                <td>{{$row['guild_master']}}</td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <th colspan="4" class="text-center text-danger"><h3>ขณะนี้ยังไม่มีรายงานผลกิลด์วอร์</h3></th>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
 </div>
