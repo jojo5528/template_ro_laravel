@@ -138,7 +138,6 @@
                             <li>APP_STATUS หมายถึง สถานะเซิฟตั้งค่าไว้ 3 แบบ (ONLINE / OFFLINE / MAINTENANCE) - ตั้งค่าตัวพิมพ์ใหญ่เท่านั้น</li>
                             <li>APP_URL หมายถึง URL ตั้งต้น(base url) ของเว็บไซต์ หากนำขึ้นเซิฟเวอร์จดโดเมนใดๆ ก็ให้ใส่ให้ถูกต้องรวมถึง protocol ด้วย เช่น https://www.google.com</li>
                             <li>ASSET_URL หมายถึง URL Asset ให้ใส่ตาม APP_URL ตามด้วย /public เช่น https://www.google.com/public</li>
-                            <li>APP_VOTE_URL หมายถึง URL Vote ที่ต้องการลิงค์ไป เวลากดเมนู VOTE</li>
                             <li>APP_FB_GROUP_URL หมายถึง URL Group Facebook ที่ต้องการลิงค์ไป เวลากดเมนู SOCIAL หรือ FB GROUP</li>
                             <hr>
                             <li>DB_CONNECTION หมายถึง Database ที่ใช้ (ปกติคือ mysql)</li>
