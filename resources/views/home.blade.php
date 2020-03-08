@@ -66,98 +66,33 @@
     <h1 class="text-center"><i class="fas fa-crown fa-2x text-danger"></i> RANKING</h1>
     <hr>
     <div class="row justify-content-center text-center">
-        <div class="col-md-3">
-            <table class="table table-sm table-striped table-bordered table-hover text-left">
-                <thead class="text-center bg-primary text-white">
-                    <tr>
-                        <th colspan="3"><h5>RANKING VOTE</h5></th>
-                    </tr>
-                    <tr>
-                        <th>ลำดับ</th>
-                        <th>ID</th>
-                        <th>แต้ม</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for($i=1;$i<=10;$i++)
-                        <tr>
-                            <td>{{$i}}</td>
-                            <td>test</td>
-                            <td>{{rand(100,999)}}</td>
-                        </tr>
-                    @endfor
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-3">
-            <table class="table table-sm table-striped table-bordered table-hover text-left">
-                <thead class="text-center bg-warning text-white">
-                    <tr>
-                        <th colspan="3"><h5>RANKING MVP</h5></th>
-                    </tr>
-                    <tr>
-                        <th>ลำดับ</th>
-                        <th>ตัวละคร</th>
-                        <th>แต้ม</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for($i=1;$i<=10;$i++)
-                        <tr>
-                            <td>{{$i}}</td>
-                            <td>test</td>
-                            <td>{{rand(100,999)}}</td>
-                        </tr>
-                    @endfor
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-3">
-            <table class="table table-sm table-striped table-bordered table-hover text-left">
-                <thead class="text-center bg-success text-white">
-                    <tr>
-                        <th colspan="3"><h5>RANKING PVP</h5></th>
-                    </tr>
-                    <tr>
-                        <th>ลำดับ</th>
-                        <th>ตัวละคร</th>
-                        <th>แต้ม</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for($i=1;$i<=10;$i++)
-                        <tr>
-                            <td class="text-center"><b class="badge badge-pill badge-dark">{{$i}}</b></td>
-                            <td>test</td>
-                            <td>{{rand(100,999)}}</td>
-                        </tr>
-                    @endfor
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-3">
-            <table class="table table-sm table-striped table-bordered table-hover text-left">
-                <thead class="text-center bg-danger text-white">
-                    <tr>
-                        <th colspan="3"><h5>RANKING SHARE</h5></th>
-                    </tr>
-                    <tr>
-                        <th>ลำดับ</th>
-                        <th>ID</th>
-                        <th>แต้ม</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for($i=1;$i<=10;$i++)
-                        <tr>
-                            <td>{{$i}}</td>
-                            <td>test</td>
-                            <td>{{rand(100,999)}}</td>
-                        </tr>
-                    @endfor
-                </tbody>
-            </table>
-        </div>
+        <ranking_table
+            :title="'VOTE'"
+            :data="{{json_encode($ranking['vote'])}}"
+            :css_bg="'bg-primary'"
+            :name="'ID'"
+        ></ranking_table>
+
+        <ranking_table
+            :title="'MVP'"
+            :data="{{json_encode($ranking['mvp'])}}"
+            :css_bg="'bg-warning'"
+            :name="'ตัวละคร'"
+        ></ranking_table>
+
+        <ranking_table
+            :title="'PVP'"
+            :data="{{json_encode($ranking['pvp'])}}"
+            :css_bg="'bg-success'"
+            :name="'ตัวละคร'"
+        ></ranking_table>
+
+        <ranking_table
+            :title="'SHARE'"
+            :data="{{json_encode($ranking['share'])}}"
+            :css_bg="'bg-danger'"
+            :name="'ID'"
+        ></ranking_table>
     </div>
     <hr class="border-dark">
 

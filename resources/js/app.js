@@ -9,6 +9,7 @@ import vueSmoothScroll from 'vue2-smooth-scroll';
 Vue.use(vueSmoothScroll);
 
 Vue.component('status_server', require('./components/Status_Server.vue').default);
+Vue.component('ranking_table', require('./components/Ranking_Table.vue').default);
 Vue.component('news_filter', require('./components/News_Filter.vue').default);
 Vue.component('news_editor', require('./components/News_Editor.vue').default);
 Vue.component('page_editor', require('./components/Page_Editor.vue').default);

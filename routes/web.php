@@ -12,7 +12,7 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 //page
 Route::get('/', 'RouteController@index')->name('home');
 Route::redirect('/home', '/');
-Route::get('/{page}', 'RouteController@page_view')->name('page');
+Route::get('/page/{page}', 'RouteController@page_view')->name('page');
 Route::prefix('news')->name('news.')->group(function (){
     Route::get('/', 'RouteController@news_all')->name('all');
     Route::get('/{news}', 'RouteController@news_show')->name('show');
