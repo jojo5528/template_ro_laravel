@@ -16,6 +16,7 @@
             <div class="card shadow">
                 <div class="card-header text-center"><h1>UCP - LOGIN</h1></div>
                 <div class="card-body">
+                    <h2 class="text-center">ทดสอบระบบ IDGM = TEST / TEST</h2>
                     <form method="POST" action="{{route('login')}}" autocomplete="off">
                         @csrf
                         <div class="form-group row">
