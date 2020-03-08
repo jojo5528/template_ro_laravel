@@ -30,12 +30,43 @@ class WOEController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $data = $request->except('_token', '_method');
+
+        $validator = Validator::make($request->all(), [
+            'castle_id' => ['required', 'integer', 'min:0'],
+            'name' => ['required', 'string', 'max:255'],
+        ]);
+
+        if($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator);
+        }
+
+        $woe = WOE_Data::create($data);
+        if(!$woe){
+            return redirect()->back()->withErrors(['error'=>'เพิ่มข้อมูล WOE Castle ล้มเหลว! กรุณาติดต่อผู้ดูแลระบบ']);
+        }
+        return redirect()->route('manage.woe.index')->withErrors(['success'=>'เพิ่มข้อมูล WOE Castle ID:'.$woe->id.' สำเร็จ!']);
     }
 
     public function update(Request $request, WOE_Data $woe)
     {
-        //
+        $data = $request->except('_token', '_method');
+
+        $validator = Validator::make($request->all(), [
+            'castle_id' => ['required', 'integer', 'min:0'],
+            'name' => ['required', 'string', 'max:255'],
+        ]);
+
+        if($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator);
+        }
+
+        if(!($woe->update($data))){
+            return redirect()->back()->withErrors(['error'=>'แก้ไขข้อมูล WOE Castle ID:'.$woe->id.' ล้มเหลว! กรุณาติดต่อผู้ดูแลระบบ']);
+        }
+        return redirect()->route('manage.woe.show', $woe->id)->withErrors(['success'=>'แก้ไขข้อมูล WOE Castle ID:'.$woe->id.' สำเร็จ!']);
     }
 
     public function destroy(WOE_Data $woe)
