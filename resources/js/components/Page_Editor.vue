@@ -14,7 +14,7 @@
         <div class="form-group row">
             <label class="col-md-4 col-form-label text-md-right">NAME</label>
             <div class="col-md-6">
-                <select class="custom-select custom-select-lg mb-3" name="type" v-model="name">
+                <select class="custom-select custom-select-lg mb-3" name="name" v-model="name">
                     <option v-for="(val, key) in name_data" :key="key" :value="key">{{val}}</option>
                 </select>
             </div>
